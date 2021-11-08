@@ -1,7 +1,7 @@
 from time import *
 from contextlib import contextmanager
 
-class cm_timer1:
+class cm_timer_1:
     def __init__(self):
         pass
     
@@ -9,18 +9,19 @@ class cm_timer1:
        self.startTime = time()
     
     def __exit__(self, exc_type, exc_val, exc_tb):
-       print(time() - self.startTime)
+       print("time {}".format(time() - self.startTime))
  
 @contextmanager
-def cm_timer2():
+def cm_timer_2():
     try:
         startTime = time()
         yield startTime
     finally:
-        print(time() - startTime)
-    
-with cm_timer1():
-    sleep(5.5)
+        print("time {}".format(time() - startTime))
 
-with cm_timer2():
-    sleep(5.5)
+if __name__ == "__main__":
+    with cm_timer_1():
+        sleep(3.5)
+    
+    with cm_timer_2():
+        sleep(2)
