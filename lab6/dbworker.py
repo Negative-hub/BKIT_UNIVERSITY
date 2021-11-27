@@ -8,7 +8,7 @@ def get(key):
             return db[key].decode() 
         except KeyError:  
             # в случае ошибки значение по умолчанию - начало диалога
-            return config.States.S_START.value  
+            return config.States.STATE_START.value  
 
 
 # Запись значения
@@ -19,7 +19,7 @@ def set(key, value):
             return True
         except:
             # тут желательно как-то обработать ситуацию
-            return config.States.S_START.value 
+            return config.States.STATE_START.value 
 
 
 # Создание ключа для записи и чтения
